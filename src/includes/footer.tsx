@@ -28,7 +28,7 @@ export default function Footer() {
                     {/* Right */}
                     <div className="flex md:justify-end">
                         <div className="flex flex-col justify-between gap-4 md:items-start">
-                            <ul className="flex items-center gap-8 font-medium pb-2 border-b">
+                            <ul className="flex flex-wrap items-center gap-8 font-medium pb-2 border-b">
                                 <button className="hover:text-[#D4AF37] cursor-pointer" onClick={() => scrollToSection("home")}>Home</button>
                                 <button className="hover:text-[#D4AF37] cursor-pointer" onClick={() => scrollToSection("about-us")}>About Us</button>
                                 <button className="hover:text-[#D4AF37] cursor-pointer" onClick={() => scrollToSection("services")}>Services</button>
@@ -44,7 +44,7 @@ export default function Footer() {
                                 </a>
                             </div>
 
-                            <div className="flex items-center justify-between gap-6">
+                            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                                 {/* Partners */}
                                 <div className="flex flex-wrap items-center gap-6">
                                     <Image src={"/amazon-icon.png"} alt="visa icon" width={30} height={30} />
