@@ -1,65 +1,91 @@
+"use client"
+
+import Languages from "@/components/languages";
+import { CollapsibleIndustries } from "@/components/more-industries";
+import { CollapsibleServices } from "@/components/more-services";
+import QuoteForm from "@/components/quoteForm";
+import Footer from "@/includes/footer";
+import Navbar from "@/includes/navbar";
+import { scrollToSection } from "@/lib/scrollToSection";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Home Section */}
+      <section id="home" className="p-8 mx-auto">
+        <div className="flex flex-col-reverse md:flex-row justify-between gap-4">
+          {/* Content Side */}
+          <div className="flex flex-col items-start gap-8">
+            <h1 className="text-5xl text-[#1F3A4A] font-bold">Professional Asian Language Translation Services</h1>
+            <p className="text-[20px]">Reach your audience across Asia with Asia Translation and connect with them on a deeper level. Grow your global presence through translations that reflect not only the language, but the culture behind it.</p>
+            <button className="bg-linear-to-l from-[#D4AF37] to-[#dac172] text-[#1F3A4A] hover:translate-y-1 font-semibold text-[20px] px-6 py-2 rounded-md transition cursor-pointer"
+              onClick={() => scrollToSection("join-us")}>
+              Get a free Quote
+            </button>
+          </div>
+
+          {/* Hero Side */}
+          <div>
+            <Image src={"/hero.png"} alt="hero" width={1200} height={500} />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        {/* Icons */}
+        <div className="flex flex-wrap items-center gap-6">
+          <Image src={"/amazon-icon.png"} alt="visa icon" width={50} height={30} />
+          <Image src={"/hp-icon.png"} alt="visa icon" width={50} height={30} />
+          <Image src={"/microsoft-icon.png"} alt="visa icon" width={120} height={30} />
+          <p className="text-[20px] text-[#747474] font-normal">+ Trusted by leading global brands</p>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about-us" className="flex flex-col gap-4 items-center p-8">
+        <h1 className="text-5xl text-[#1F3A4A] font-bold">About Asia Translations</h1>
+        <p className="text-[20px] text-center">Asia Translation is a certified language services provider with over a decade of experience helping businesses grow across global markets.
+          With a trusted network of native-speaking linguists across Asia, we deliver accurate, culturally relevant translation and localization services.
+          We help brands communicate clearly, authentically, and on time—every time.</p>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="flex flex-col gap-4 items-center p-8">
+        <h1 className="text-5xl text-[#1F3A4A] font-bold">Our Services</h1>
+        <p className="text-[20px] text-center">Comprehensive translation solutions for all your business needs.</p>
+        <CollapsibleServices />
+      </section>
+
+      {/* Industries Section */}
+      <section id="industries" className="flex flex-col gap-4 items-center p-8">
+        <h1 className="text-5xl text-[#1F3A4A] font-bold">Industries</h1>
+        <CollapsibleIndustries />
+      </section>
+
+      {/* Languages Section */}
+      <section id="languages" className="p-8">
+        <h1 className="text-5xl text-[#1F3A4A] font-bold text-center pb-4">Languages</h1>
+        <Languages />
+      </section>
+
+      {/* Join Us Section */}
+      <section id="join-us" className="flex flex-col gap-4 items-center p-8">
+        <h1 className="text-5xl text-[#1F3A4A] font-bold text-center">Get a Free Quote for Your Global Needs</h1>
+        <QuoteForm />
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </>
   );
 }
+
+const sectionStyle = {
+  height: "100vh",
+  padding: "50px",
+  margin: "0 auto",
+  background: "#f5f5f5",
+  borderBottom: "1px solid #ddd",
+};
