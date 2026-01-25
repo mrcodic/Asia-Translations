@@ -2,12 +2,15 @@
 
 import { scrollToSection } from '@/lib/scrollToSection';
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { FaX } from 'react-icons/fa6';
+import { Dancing_Script } from "next/font/google";
 
-
+const dancingScript = Dancing_Script({
+weight: "400",
+subsets: ["latin"],
+});
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -17,8 +20,10 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
 
           {/* Logo */}
-          <Image src={"/logo.svg"} alt='logo' width={200} height={100} className='cursor-pointer'
-            onClick={() => scrollToSection("home")} />
+          <div className='flex items-center cursor-pointer' onClick={() => scrollToSection("home")}>
+            <Image src={"/logo-icon.png"} alt='logo' width={100} height={80} />
+            <h1 className={`${dancingScript.className} text-2xl md:text-4xl font-bold`}>Asia Translations</h1>
+          </div>
 
           {/* Links */}
           <ul className="hidden lg:flex items-center gap-8 font-medium">
@@ -54,7 +59,11 @@ const Navbar = () => {
       >
         <FaX size={12} onClick={() => setOpen(false)} />
         <div className="flex justify-center py-4">
-          <Image src={"/logo.svg"} alt='logo' width={120} height={100} className='mx-auto' />
+          {/* Logo */}
+          <div className='flex items-center cursor-pointer' onClick={() => scrollToSection("home")}>
+            <Image src={"/logo-icon.png"} alt='logo' width={100} height={80} />
+            <h1 className={`${dancingScript.className} text-2xl md:text-4xl font-bold`}>Asia Translations</h1>
+          </div>
         </div>
 
         <ul className="flex flex-col gap-6 w-40 py-4 text-md">

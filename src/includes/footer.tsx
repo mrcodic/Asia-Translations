@@ -6,6 +6,12 @@ import {
     Youtube,
 } from "lucide-react"
 import Image from "next/image"
+import { Dancing_Script } from "next/font/google";
+
+const dancingScript = Dancing_Script({
+weight: "400",
+subsets: ["latin"],
+});
 
 export default function Footer() {
     return (
@@ -15,8 +21,10 @@ export default function Footer() {
                     {/* Left */}
                     <div className="flex flex-col gap-4">
                         {/* Logo */}
-                        <Image src={"/logo.svg"} alt='logo' width={200} height={100} className='cursor-pointer'
-                            onClick={() => scrollToSection("home")} />
+                        <div className='flex items-center cursor-pointer' onClick={() => scrollToSection("home")}>
+                            <Image src={"/logo-icon.png"} alt='logo' width={100} height={80} />
+                            <h1 className={`${dancingScript.className} text-2xl md:text-4xl font-bold`}>Asia Translations</h1>
+                        </div>
 
                         <p className="text-md text-gray-300 max-w-md">
                             Your bridge to professional Asian language translation

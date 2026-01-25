@@ -1,23 +1,13 @@
 import type { Metadata } from "next";
-import { Spectral  } from "next/font/google";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const spectral = Spectral({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const poppins = Poppins({
+subsets: ["latin"],
+weight: ["400", "500", "600", "700"],
+variable: "--font-poppins",
 });
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Asia Translations",
@@ -32,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spectral.className} overflow-x-hidden`}
+        className={`${poppins.variable} overflow-x-hidden`}
       >
         {children}
       </body>

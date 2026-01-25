@@ -32,7 +32,7 @@ export default function Home() {
 
           {/* Hero Side */}
           <div>
-            <Image src={"/hero.png"} alt="hero" width={1200} height={500} />
+            <Image src={"/hero.png"} alt="hero" width={1090} height={500} />
           </div>
         </div>
         {/* Icons */}
