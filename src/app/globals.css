@@ -44,14 +44,14 @@ body {
   background-color: var(--bg-color);
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
-}
+  font-family: "Times New Roman", Times, serif;
+} */
 
 * {
   margin: 0;
@@ -133,11 +133,25 @@ h6 {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@font-face {
+  font-family: "Tabac Glam G1";
+  src: url("/fonts/TabacGlamG1SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
-    @apply bg-background text-foreground;
+    font-family: var(--font-poppins);
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Tabac Glam G1", sans-serif;
+}
 }
