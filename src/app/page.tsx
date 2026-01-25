@@ -1,5 +1,6 @@
 "use client"
 
+import AnimatedSection from "@/components/animatedSection";
 import Languages from "@/components/languages";
 import { CollapsibleIndustries } from "@/components/more-industries";
 import { CollapsibleServices } from "@/components/more-services";
@@ -44,37 +45,37 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about-us" className="flex flex-col gap-4 items-center p-8">
+      <AnimatedSection id="about-us" animation="left" className="flex flex-col gap-4 items-center p-8 py-20 mx-auto">
         <h1 className="text-5xl text-[#1F3A4A] font-bold">About Asia Translations</h1>
         <p className="text-[20px] text-center">Asia Translation is a certified language services provider with over a decade of experience helping businesses grow across global markets.
           With a trusted network of native-speaking linguists across Asia, we deliver accurate, culturally relevant translation and localization services.
           We help brands communicate clearly, authentically, and on time—every time.</p>
-      </section>
+      </AnimatedSection>
 
       {/* Services Section */}
-      <section id="services" className="flex flex-col gap-4 items-center p-8">
+      <AnimatedSection id="services" animation="right" className="flex flex-col gap-4 items-center p-8 py-20 mx-auto">
         <h1 className="text-5xl text-[#1F3A4A] font-bold">Our Services</h1>
         <p className="text-[20px] text-center">Comprehensive translation solutions for all your business needs.</p>
         <CollapsibleServices />
-      </section>
+      </AnimatedSection>
 
       {/* Industries Section */}
-      <section id="industries" className="flex flex-col gap-4 items-center p-8">
+      <AnimatedSection id="industries" animation="zoom" className="flex flex-col gap-4 items-center p-8 py-20 mx-auto">
         <h1 className="text-5xl text-[#1F3A4A] font-bold">Industries</h1>
         <CollapsibleIndustries />
-      </section>
+      </AnimatedSection>
 
       {/* Languages Section */}
-      <section id="languages" className="p-8">
+      <AnimatedSection id="languages" animation="up" className="p-8 mx-auto">
         <h1 className="text-5xl text-[#1F3A4A] font-bold text-center pb-4">Languages</h1>
         <Languages />
-      </section>
+      </AnimatedSection>
 
       {/* Join Us Section */}
-      <section id="join-us" className="flex flex-col gap-4 items-center p-8">
+      <AnimatedSection id="join-us" animation="zoom" className="flex flex-col gap-4 items-center p-8 mx-auto">
         <h1 className="text-5xl text-[#1F3A4A] font-bold text-center">Get a Free Quote for Your Global Needs</h1>
         <QuoteForm />
-      </section>
+      </AnimatedSection>
 
       {/* Footer */}
       <Footer />

@@ -6,6 +6,6 @@ export const scrollToSection = (
 
     const y =
         el.getBoundingClientRect().top +
-        window.scrollY
+        window.scrollY - 80
     window.scrollTo({ top: y, behavior: "smooth" })
 }

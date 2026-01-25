@@ -13,7 +13,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <nav className="sticky top-0 z-50 w-full bg-[#1F3A4A] text-white">
+      <nav className="sticky top-0 z-50 bg-[#1F3A4A] text-white">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
 
           {/* Logo */}
@@ -58,11 +58,11 @@ const Navbar = () => {
         </div>
 
         <ul className="flex flex-col gap-6 w-40 py-4 text-md">
-          <li><Link href="#home" onClick={() => setOpen(false)}>Home</Link></li>
-          <li><Link href="#about-us" onClick={() => setOpen(false)}>About</Link></li>
-          <li><Link href="#services" onClick={() => setOpen(false)}>Services</Link></li>
-          <li><Link href="#industries" onClick={() => setOpen(false)}>Industries</Link></li>
-          <li><Link href="#languages" onClick={() => setOpen(false)}>Languages</Link></li>
+          <button onClick={() => {scrollToSection("home"), setOpen(false)}}>Home</button>
+          <button onClick={() => {scrollToSection("about-us"), setOpen(false)}}>About</button>
+          <button onClick={() => {scrollToSection("services"), setOpen(false)}}>Services</button>
+          <button onClick={() => {scrollToSection("industries"), setOpen(false)}}>Industries</button>
+          <button onClick={() => {scrollToSection("languages"), setOpen(false)}}>Languages</button>
           <button className="bg-linear-to-l from-[#D4AF37] to-[#ecd895] text-[#1F3A4A] font-semibold text-md px-5 py-2 rounded-md transition cursor-pointer"
             onClick={() => { scrollToSection("join-us"), setOpen(false) }}>
             Get a Quote
