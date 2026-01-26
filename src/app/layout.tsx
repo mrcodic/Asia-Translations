@@ -3,11 +3,10 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
-subsets: ["latin"],
-weight: ["400", "500", "600", "700"],
-variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
-
 
 export const metadata: Metadata = {
   title: "Asia Translations",
@@ -21,11 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} overflow-x-hidden`}
-      >
-        {children}
-      </body>
+      <body className={`${poppins.variable} overflow-x-hidden`}>{children}</body>
     </html>
   );
 }
