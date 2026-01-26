@@ -77,7 +77,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <ul className="flex flex-col gap-6 w-40 py-4 text-md">
+        <ul className="flex flex-col gap-6 py-4 text-md">
           <button
             onClick={() => {
               scrollToSection("home"), setOpen(false);
