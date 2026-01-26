@@ -7,14 +7,7 @@ export async function POST(request: Request) {
     const formData = await request.formData();
 
     const firstName = formData.get("firstName")?.toString();
-    const lastName = formData.get("lastName")?.toString();
     const email = formData.get("email")?.toString();
-    const phone = formData.get("phone")?.toString();
-    const country = formData.get("country")?.toString();
-    const industry = formData.get("industry")?.toString();
-    const jobTitle = formData.get("jobTitle")?.toString();
-    const company = formData.get("company")?.toString();
-    const message = formData.get("message")?.toString();
 
     const file = formData.get("projectFiles") as File | null;
 

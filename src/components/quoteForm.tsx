@@ -299,28 +299,5 @@ export default function QuoteForm() {
         </div>
       </form>
     </div>
-    // <form onSubmit={onFormSubmitted} className="grid gap-4">
-    //   <Input name="firstName" placeholder="First name" onChange={(e) => setUser({ ...user, firstName: e.target.value })} required />
-
-    //   <Input name="lastName" placeholder="Last name" onChange={(e) => setUser({ ...user, lastName: e.target.value })} required />
-
-    //   <Input
-    //     name="email" // ✅ FIXED
-    //     type="email"
-    //     placeholder="Email"
-    //     onChange={(e) => setUser({ ...user, email: e.target.value })}
-    //     required
-    //   />
-
-    //   <Input name="phone" placeholder="Phone" onChange={(e) => setUser({ ...user, phone: e.target.value })} required />
-
-    //   <Input name="country" placeholder="Country" onChange={(e) => setUser({ ...user, country: e.target.value })} required />
-
-    //   <Textarea name="message" placeholder="Message" onChange={(e) => setUser({ ...user, message: e.target.value })} />
-
-    //   <Input type="file" name="projectFiles" onChange={(e) => setUser({ ...user, projectFiles: e.target.files?.[0] ?? null })} />
-
-    //   <Button type="submit">Send</Button>
-    // </form>
   );
 }

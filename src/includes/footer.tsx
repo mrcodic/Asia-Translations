@@ -1,5 +1,4 @@
 import { scrollToSection } from "@/lib/scrollToSection";
-import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import { Dancing_Script } from "next/font/google";
 
@@ -46,30 +45,12 @@ export default function Footer() {
                   Languages
                 </button>
               </ul>
-              <div className="flex gap-6 text-md">
-                <a href="#" className="hover:text-[#D4AF37]">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-[#D4AF37]">
-                  Terms of Service
-                </a>
-              </div>
 
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-                {/* Partners */}
-                <div className="flex flex-wrap items-center gap-6">
-                  <Image src={"/amazon-icon.png"} alt="visa icon" width={30} height={30} />
-                  <Image src={"/hp-icon.png"} alt="visa icon" width={30} height={30} />
-                  <Image src={"/microsoft-icon.png"} alt="visa icon" width={100} height={30} />
-                </div>
-
-                {/* Social */}
-                <div className="flex gap-4">
-                  <Facebook className="w-4 h-4 text-[#D4AF37]" />
-                  <Twitter className="w-4 h-4 text-[#D4AF37]" />
-                  <Linkedin className="w-4 h-4 text-[#D4AF37]" />
-                  <Youtube className="w-4 h-4 text-[#D4AF37]" />
-                </div>
+              {/* Partners */}
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-6">
+                <Image src={"/amazon-icon.png"} alt="visa icon" width={30} height={30} />
+                <Image src={"/hp-icon.png"} alt="visa icon" width={30} height={30} />
+                <Image src={"/microsoft-icon.png"} alt="visa icon" width={100} height={30} />
               </div>
             </div>
           </div>
