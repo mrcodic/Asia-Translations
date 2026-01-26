@@ -74,10 +74,13 @@ const industries = [
 
 export default function QuoteForm() {
   const [interest, setInterest] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     control,
     handleSubmit,
+    reset,
     setValue,
     formState: { errors },
   } = useForm<USER>({
@@ -98,29 +101,41 @@ export default function QuoteForm() {
   });
 
   const onFormSubmitted = async (d: USER) => {
-    const formData = new FormData();
-    formData.append("interest", d.interest);
-    formData.append("firstName", d.firstName);
-    formData.append("lastName", d.lastName);
-    formData.append("email", d.email);
-    formData.append("phone", d.phone);
-    formData.append("country", d.country);
-    formData.append("industry", d.industry);
-    formData.append("jobTitle", d.jobTitle);
-    formData.append("company", d.company);
-    formData.append("message", d.message);
+    setLoading(true);
 
-    if (d.projectFiles && d.projectFiles.length > 0) {
-      formData.append("projectFiles", d.projectFiles[0]);
+    try {
+      const formData = new FormData();
+      formData.append("interest", d.interest);
+      formData.append("firstName", d.firstName);
+      formData.append("lastName", d.lastName);
+      formData.append("email", d.email);
+      formData.append("phone", d.phone);
+      formData.append("country", d.country);
+      formData.append("industry", d.industry);
+      formData.append("jobTitle", d.jobTitle);
+      formData.append("company", d.company);
+      formData.append("message", d.message);
+
+      if (d.projectFiles && d.projectFiles.length > 0) {
+        formData.append("projectFiles", d.projectFiles[0]);
+      }
+
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      // ✅ مسح الفورم بعد النجاح
+      reset();
+      setInterest("");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
-
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await res.json();
-    console.log(data);
   };
 
   return (
@@ -293,8 +308,26 @@ export default function QuoteForm() {
 
         {/* Submit */}
         <div className="md:col-span-2">
-          <Button className="w-full bg-linear-to-l from-[#D4AF37] to-[#dac172] text-[#1F3A4A] hover:translate-y-1 font-semibold text-[20px] px-6 py-2 rounded-md transition cursor-pointer">
-            Request Your Free Quote
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full cursor-pointer bg-linear-to-l from-[#D4AF37] to-[#dac172] 
+             text-[#1F3A4A] hover:translate-y-1 font-semibold 
+             text-[20px] px-6 py-2 rounded-md transition
+             flex items-center justify-center gap-2
+             disabled:opacity-70 disabled:cursor-not-allowed"
+          >
+            {loading ? (
+              <>
+                <svg className="animate-spin h-5 w-5 text-[#1F3A4A]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                </svg>
+                Sending...
+              </>
+            ) : (
+              "Request Your Free Quote"
+            )}
           </Button>
         </div>
       </form>
