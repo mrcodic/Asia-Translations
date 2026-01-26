@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -128,7 +128,6 @@ export default function QuoteForm() {
       const data = await res.json();
       console.log(data);
 
-      // ✅ مسح الفورم بعد النجاح
       reset();
       setInterest("");
     } catch (error) {

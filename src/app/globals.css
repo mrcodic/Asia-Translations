@@ -44,15 +44,6 @@ body {
   background-color: var(--bg-color);
 }
 
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Times New Roman", Times, serif;
-} */
-
 .page-container {
   max-width: 1500px;
   margin: 0 auto;
