@@ -1,6 +1,7 @@
 import { scrollToSection } from "@/lib/scrollToSection";
 import Image from "next/image";
 import { Dancing_Script } from "next/font/google";
+import { FiMail } from "react-icons/fi";
 
 const dancingScript = Dancing_Script({
   weight: "400",
@@ -11,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-linear-to-r from-[#1F3A4A] to-[#254658] text-white">
       <div className="footer-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-b">
           {/* Left */}
           <div className="flex flex-col gap-4">
             {/* Logo */}
@@ -46,6 +47,14 @@ export default function Footer() {
                 </button>
               </ul>
 
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+                {/* contact us */}
+                <p>Contact us: </p>
+                <a href="mailto:info@asia-translations.com" className="flex items-center gap-2 hover:text-[#D4AF37]">
+                  <FiMail />
+                  <span>info@asia-translations.com</span>
+                </a>
+              </div>
               {/* Partners */}
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-6">
                 <Image src={"/amazon-icon.png"} alt="visa icon" width={30} height={30} />
@@ -55,6 +64,13 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        {/* copyrights */}
+        <p className="flex justify-center py-1">
+          Developed And Designed By{" "}
+          <a href="https://pixbyte.co/" target="_blank" className="text-[#D4AF37] underline ml-1">
+            Pixbyte
+          </a>
+        </p>
       </div>
     </footer>
   );
