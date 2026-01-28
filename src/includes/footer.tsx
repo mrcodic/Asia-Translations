@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection("home")}>
-              <Image src={"/logo-icon.PNG"} alt="logo" width={100} height={80} />
+              <Image src={"/logo-icon.png"} alt="logo" width={100} height={80} />
               <h1 className={`${dancingScript.className} text-2xl md:text-4xl font-bold`}>Asia Translations</h1>
             </div>
 

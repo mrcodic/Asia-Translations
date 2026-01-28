@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-1 nav-container">
           {/* Logo */}
           <div className="flex items-center cursor-pointer shrink-0" onClick={() => scrollToSection("home")}>
-            <Image src={"/logo-icon.PNG"} alt="logo" width={100} height={80} />
+            <Image src={"/logo-icon.png"} alt="logo" width={100} height={80} />
             <h1 className={`${dancingScript.className} text-2xl md:text-4xl font-bold`}>Asia Translations</h1>
           </div>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
         <div className="flex justify-center py-4">
           {/* Logo */}
           <div className="flex items-center cursor-pointer" onClick={() => scrollToSection("home")}>
-            <Image src={"/logo-icon.PNG"} alt="logo" width={100} height={80} />
+            <Image src={"/logo-icon.png"} alt="logo" width={100} height={80} />
             <h1 className={`${dancingScript.className} text-2xl md:text-4xl font-bold`}>Asia Translations</h1>
           </div>
         </div>

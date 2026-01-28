@@ -61,7 +61,7 @@ export async function POST(request: Request) {
                   <tr>
                     <td align="center" style="padding:30px;background:#1F3A4A;">
                       <img
-                        src="/public/logo-icon.PNG"
+                        src="/public/logo-icon.png"
                         alt="Asia Translations"
                         width="180"
                         style="display:block;"
